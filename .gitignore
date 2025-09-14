@@ -1,0 +1,15 @@
+# Fichiers de configuration locaux
+.env
+
+# Dépendances Node.js
+node_modules/
+
+# Fichiers uploadés par les utilisateurs
+backend/uploads/
+
+# Fichiers système macOS
+.DS_Store
+
+# Fichiers de log
+*.log
+nohup.out
