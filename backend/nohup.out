@@ -1,0 +1,368 @@
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:472:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+[dotenv@17.2.1] injecting env (4) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:472:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:477:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:477:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:477:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:477:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::6001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/server.js:469:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Object..js (node:internal/modules/cjs/loader:1708:10)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1948:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 6001
+}
+
+Node.js v22.12.0
+Email confirmation successful: hidayacine01@gmail.com
+Email confirmation successful: pierre.desclot@gmail.com
+Email confirmation successful: hidayacine01@gmail.com
+Email confirmation successful: hidayacine@yahoo.fr
+
+> impact-parebrise-backend@1.0.0 start
+> node server.js
+
+[dotenv@17.2.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+[dotenv@17.2.1] injecting env (4) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+Email confirmation successful: hugo@gmail.com
+
+> impact-parebrise-backend@1.0.0 start
+> node server.js
+
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+Received body: {
+  "service": "vitre-laterale",
+  "date": "2025-08-28",
+  "time": "10:00",
+  "firstName": "Amelie",
+  "lastName": "DUFOUR",
+  "phone": "06 37 89 98 94",
+  "email": "hidayacine@yahoo.fr",
+  "lieu_intervention": "agence",
+  "address": "",
+  "brand": "NISSAN",
+  "model": "QASHQAI",
+  "year": "2019",
+  "license": "EH-873-IK",
+  "insurance": "axa",
+  "policyNumber": "87833990323",
+  "description": "",
+  "terms": "on"
+}
+Received files: {}
+Email confirmation successful: hidayacine@yahoo.fr
+
+> impact-parebrise-backend@1.0.0 start
+> node server.js
+
+[dotenv@17.2.1] injecting env (4) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+Server for Impact Pare-Brise running on http://localhost:6001
+Email user configured: hidayacine01@gmail.com
+Received body: {
+  "service": "reparation",
+  "date": "2025-09-18",
+  "time": "16:00",
+  "firstName": "Jean",
+  "lastName": "DURIEZ",
+  "phone": "06 37 89 98 94",
+  "email": "hidayacine01@gmail.com",
+  "lieu_intervention": "domicile",
+  "address": "105 Avenue pierre millet",
+  "brand": "Renault",
+  "model": "CLIO V",
+  "year": "2015",
+  "license": "EJ-456-TD",
+  "insurance": "macif",
+  "policyNumber": "87833990323",
+  "description": "",
+  "terms": "on"
+}
+Received files: {}
+Email confirmation successful: hidayacine01@gmail.com
+Received body: {
+  "service": "reparation",
+  "date": "2025-09-18",
+  "time": "14:00",
+  "firstName": "Jean",
+  "lastName": "DURIEZ",
+  "phone": "06 37 89 98 94",
+  "email": "hidayacine01@gmail.com",
+  "lieu_intervention": "agence",
+  "address": "",
+  "brand": "Renault",
+  "model": "CLIO V",
+  "year": "2011",
+  "license": "CL-876-IO",
+  "insurance": "macif",
+  "policyNumber": "994450394",
+  "description": "",
+  "terms": "on"
+}
+Received files: {}
+Email confirmation successful: hidayacine01@gmail.com
+Received body: {
+  "service": "reparation",
+  "date": "2025-09-19",
+  "time": "11:00",
+  "firstName": "Amelie",
+  "lastName": "DUFOUR",
+  "phone": "0634569834",
+  "email": "hidayacine01@gmail.com",
+  "lieu_intervention": "domicile",
+  "address": "23 avenue de la République",
+  "brand": "Renault",
+  "model": "CLIO V",
+  "year": "2020",
+  "license": "CL-876-IO",
+  "insurance": "allianz",
+  "policyNumber": "994450394",
+  "description": "Impact situé dans le coin inférieur gauche",
+  "terms": "on"
+}
+Received files: {
+  "impactPhoto": [
+    {
+      "fieldname": "impactPhoto",
+      "originalname": "impactPhoto-1755382670214-609251407.jpeg",
+      "encoding": "7bit",
+      "mimetype": "image/jpeg",
+      "destination": "/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/uploads",
+      "filename": "1757686269494-impactPhoto-1755382670214-609251407.jpeg",
+      "path": "/Users/yacinehida/Desktop/IMPACT PARE BRISE/IMPACT_PARE_BRISE/backend/uploads/1757686269494-impactPhoto-1755382670214-609251407.jpeg",
+      "size": 6616
+    }
+  ]
+}
+Email confirmation successful: hidayacine01@gmail.com
+Received body: {
+  "service": "pare-brise",
+  "date": "2025-09-19",
+  "time": "14:00",
+  "firstName": "HUGO",
+  "lastName": "BENOUR",
+  "phone": "06 45 67 43 87",
+  "email": "hugo@gmail.com",
+  "lieu_intervention": "domicile",
+  "address": "115 avenue de la Résistance",
+  "brand": "NISSAN",
+  "model": "QASHQAI",
+  "year": "2013",
+  "license": "EH-873-IK",
+  "insurance": "axa",
+  "policyNumber": "87833990323",
+  "description": "",
+  "terms": "on"
+}
+Received files: {}
+Email confirmation successful: hugo@gmail.com
+Received body: {
+  "service": "vitre-laterale",
+  "date": "2025-09-19",
+  "time": "15:00",
+  "firstName": "Ali",
+  "lastName": "DELAR",
+  "phone": "06 45 67 43 87",
+  "email": "ali.ben@gmail.com",
+  "lieu_intervention": "domicile",
+  "address": "105 Avenue pierre millet",
+  "brand": "BMW",
+  "model": "Série 5",
+  "year": "2014",
+  "license": "BM-530-DI",
+  "insurance": "groupama",
+  "policyNumber": "5478955093",
+  "description": "",
+  "terms": "on"
+}
+Received files: {}
+Email confirmation successful: ali.ben@gmail.com

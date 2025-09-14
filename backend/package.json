@@ -1,0 +1,16 @@
+{
+  "name": "impact-parebrise-backend",
+  "version": "1.0.0",
+  "description": "Backend for Impact Parebrise",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.17.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5"
+  }
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Impact Pare-Brise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <link rel="stylesheet" href="admin_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <nav class="sidebar">
+            <div class="logo">
+                <h1>Impact Pare-Brise</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('appointments')" class="nav-link active">Rendez-vous</a></li>
+                <li><a href="#" onclick="showSection('agenda')" class="nav-link">Agenda</a></li>
+                <li><a href="#" onclick="showSection('availability')" class="nav-link">Disponibilités</a></li>
+                <li><a href="#" onclick="showSection('services')" class="nav-link">Services</a></li>
+                <li><a href="#" onclick="showSection('clients')" class="nav-link">Clients</a></li>
+                <li><a href="#" onclick="showSection('blacklist')" class="nav-link">Blacklist</a></li>
+                <li><a href="#" onclick="showSection('stats')" class="nav-link">Statistiques</a></li>
+                <li><a href="#" onclick="logout()" class="nav-link logout">Déconnexion</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- Appointments Section -->
+            <section id="appointments" class="content-section active">
+                <div class="section-header">
+                    <h1>Rendez-vous</h1>
+                    <button onclick="exportCSV()" class="btn-export">Exporter CSV</button>
+                </div>
+                <div class="filters-section">
+                    <select id="serviceFilter"><option value="">Tous les services</option></select>
+                    <input type="date" id="dateFromFilter" placeholder="Date début">
+                    <input type="date" id="dateToFilter" placeholder="Date fin">
+                    <button onclick="applyFilters()" class="btn-filter">Filtrer</button>
+                    <button onclick="resetFilters()" class="btn-reset">Réinitialiser</button>
+                </div>
+                <div id="appointments-grid" class="appointments-grid"></div>
+            </section>
+
+            <!-- Agenda Section -->
+            <section id="agenda" class="content-section">
+                <div class="section-header">
+                    <h1>Agenda</h1>
+                </div>
+                <div id="calendar"></div>
+            </section>
+
+            <!-- Availability Section -->
+            <section id="availability" class="content-section">
+                <div class="section-header">
+                    <h1>Gestion des Disponibilités</h1>
+                </div>
+                <div class="availability-manager">
+                    <div class="time-slots">
+                        <h3>Créneaux Horaires</h3>
+                        <div id="timeSlotsList"></div>
+                        <button onclick="addTimeSlot()" class="btn-add">Ajouter un créneau</button>
+                    </div>
+                    <div class="vacation-periods">
+                        <h3>Fermeture</h3>
+                        <div class="vacation-form">
+                            <div class="date-range-picker">
+                                <label for="vacationStart" class="date-input-wrapper">
+                                    <span>Début</span>
+                                    <input type="date" id="vacationStart">
+                                </label>
+                                <label for="vacationEnd" class="date-input-wrapper">
+                                    <span>Fin</span>
+                                    <input type="date" id="vacationEnd">
+                                </label>
+                            </div>
+                            <input type="text" id="vacationReason" placeholder="Motif (optionnel)">
+                            <div class="single-day-option">
+                                <input type="checkbox" id="singleDay" onchange="toggleEndDate()">
+                                <label for="singleDay">Un seul jour</label>
+                            </div>
+                            <button onclick="addVacationPeriod()" class="btn-add">Ajouter période</button>
+                        </div>
+                        <div id="vacationsList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="content-section">
+                <div class="section-header">
+                    <h1>Gestion des Services</h1>
+                    <button onclick="showAddService()" class="btn-add">Nouveau Service</button>
+                </div>
+                <div class="services-list" id="servicesList"></div>
+            </section>
+
+            <!-- Clients Section -->
+            <section id="clients" class="content-section">
+                <div class="section-header">
+                    <h1>Clients</h1>
+                </div>
+                <div class="toolbar">
+                    <input type="text" id="client-search" placeholder="Rechercher un client...">
+                </div>
+                <div class="clients-table-container">
+                    <table id="clientsTable">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Téléphone</th>
+                                <th>Email</th>
+                                <th>Dernière Visite</th>
+                                <th>Réservations</th>
+                                <th>Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Blacklist Section -->
+            <section id="blacklist" class="content-section">
+                <div class="section-header">
+                    <h1>Clients sur Liste Noire</h1>
+                </div>
+                <div id="blacklist-grid" class="blacklist-grid">
+                    <!-- Les cartes de clients blacklistés seront injectées ici par JS -->
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="stats" class="content-section">
+                <div class="section-header">
+                    <h1>Statistiques</h1>
+                </div>
+                <div class="filters-section">
+                    <select id="statsServiceFilter"><option value="">Tous les services</option></select>
+                    <input type="date" id="statsDateFrom" placeholder="Date début">
+                    <input type="date" id="statsDateTo" placeholder="Date fin">
+                    <select id="statsStatusFilter"><option value="">Tous les statuts</option><option value="honored">Honorés</option><option value="not-honored">Non honorés</option><option value="pending">En attente</option></select>
+                    <button onclick="applyStatsFilters()" class="btn-filter">Appliquer</button>
+                    <button onclick="resetStatsFilters()" class="btn-reset">Réinitialiser</button>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Rendez-vous honorés</h3>
+                        <span class="stat-number" id="honoredStats">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Non honorés</h3>
+                        <span class="stat-number" id="notHonoredStats">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Chiffre d'affaires</h3>
+                        <span class="stat-number" id="revenueStats">0€</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total clients</h3>
+                        <span class="stat-number" id="totalClients">0</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="appointment-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('appointment-modal')">&times;</span>
+            <h2 id="modal-title">Détails du Rendez-vous</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="client-details-modal" class="modal client-details-modal-container" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('client-details-modal')">&times;</span>
+            <div id="client-details-body">
+                <div class="client-details-header">
+                    <div class="client-avatar-section">
+                        <i class="fas fa-user-circle client-avatar"></i>
+                    </div>
+                    <div class="client-info-section">
+                        <div class="client-primary-info">
+                            <h2 class="client-name" id="modal-client-name"></h2>
+                            <span class="client-status-badge" id="modal-client-status">
+                                <i class="fas"></i>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="client-contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span id="modal-client-phone"></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span id="modal-client-email"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-statistics-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Statistiques du Client
+                    </h3>
+                    <div class="client-stats-grid">
+                        <div class="stat-card total-appointments">
+                            <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="stat-content">
+                                <div class="stat-label">Rendez-vous Total</div>
+                                <div class="stat-value" id="modal-total-appointments"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card last-visit">
+                            <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+                            <div class="stat-content">
+                                <div class="stat-label">Dernière Visite</div>
+                                <div class="stat-value" id="modal-last-visit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointments-history-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-history"></i>
+                        Historique des Rendez-vous
+                    </h3>
+                    <div class="appointments-history-list" id="modal-appointment-history">
+                        <!-- Appointment items will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('serviceModal')">&times;</span>
+            <h2>Nouveau Service</h2>
+            <form id="serviceForm">
+                <input type="text" id="serviceName" placeholder="Nom du service" required>
+                <input type="number" id="servicePrice" placeholder="Prix (€)" required>
+                <input type="number" id="serviceDuration" placeholder="Durée (min)" required>
+                <textarea id="serviceDescription" placeholder="Description"></textarea>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="confirmationTitle">Confirmation</h2>
+                <span class="close-button" onclick="closeModal('confirmationModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="confirmationIcon" class="modal-icon"></div>
+                <p id="confirmationMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmBtn" class="btn-modal">Confirmer</button>
+                <button id="cancelBtn" class="btn-modal" onclick="closeModal('confirmationModal')">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="feedbackTitle">Information</h2>
+                <span class="close-button" onclick="closeModal('feedbackModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="feedbackIcon" class="modal-icon"></div>
+                <p id="feedbackMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" onclick="closeModal('feedbackModal')">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Time Slot Modal -->
+    <div id="addTimeSlotModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ajouter un créneau</h2>
+                <span class="close-button" onclick="closeModal('addTimeSlotModal')">&times;</span>
+            </div>
+            <form id="addTimeSlotForm">
+                <div class="modal-body">
+                    <input type="text" id="newTimeSlot" placeholder="HH:MM" pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-modal btn-confirm">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Absence Modal -->
+    <div id="absence-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>Absence du client</h2>
+            <p>Le client a-t-il justifié son absence ?</p>
+            <div class="modal-actions">
+                <button id="absence-justified-btn" class="btn-modal btn-confirm">Oui</button>
+                <button id="absence-unjustified-btn" class="btn-modal btn-danger">Non</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="admin_script.js"></script>
+</body>
+</html>
