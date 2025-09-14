@@ -13,7 +13,7 @@ app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Serve static files from the 'admin' directory
-app.use(express.static(path.join(__dirname, '../admin')));
+app.use(express.static(path.join(__dirname, 'admin')));
 
 // Serve static files from the main project directory for assets like the logo
 app.use(express.static(path.join(__dirname, '../../IMPACT PARE BRISE')));
@@ -582,7 +582,7 @@ app.get('/api/client-status', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../admin/index.html'));
+    res.sendFile(path.join(__dirname, 'admin/index.html'));
 });
 
 app.listen(PORT, () => {
