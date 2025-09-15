@@ -44,6 +44,8 @@ body {
     height: 104px;
     width: auto;
     max-width: 482px;
+    margin-top: 8px;
+    transform: translateY(10px) scale(1.15);
 }
 
 .nav-logo h2 {
@@ -1961,26 +1963,28 @@ body {
 .intervention-image {
     text-align: center;
     margin-bottom: 3rem;
-    background: #f8f9fa;
+    background: transparent; /* Rendre le fond transparent */
 }
 
 .intervention-image img {
     width: 100%;
     height: auto;
     max-width: 525px;
-    background: #f8f9fa;
-    transition: transform 0.3s ease;
+    background: transparent; /* Rendre le fond de l'image transparent */
+    transition: transform 0.3s ease, margin-top 0.3s ease;
+    transform: scale(1.2); /* Augmente la taille par un facteur 1.2 */
+    margin-top: -20px; /* Remonte l'image de 20px */
 }
 
 .intervention-image img:hover {
-    transform: scale(1.05);
+    transform: scale(1.25); /* Ajuste le hover pour la nouvelle taille */
 }
 
 .departments-container {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
     min-height: 400px;
 }
@@ -2005,7 +2009,7 @@ body {
 .intervention-image-centered {
     flex-shrink: 0;
     width: 525px;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .department-item {
