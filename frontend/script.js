@@ -61,6 +61,7 @@ function initializeBookingForm() {
         setupFormNavigation();
         setupServiceSelection();
         setupInterventionLocation();
+        setupInsuranceField();
         bookingForm.addEventListener('submit', handleFormSubmission);
     });
 }
@@ -276,14 +277,10 @@ function setupInterventionLocation() {
 
     if (lieuRadios.length > 0 && adresseGroup && addressInput) {
         lieuRadios.forEach(radio => {
-            radio.addEventListener('change', (event) => {
-                if (event.target.value === 'domicile') {
-                    adresseGroup.style.display = 'block';
-                    addressInput.required = true;
-                } else {
-                    adresseGroup.style.display = 'none';
-                    addressInput.required = false;
-                }
+            radio.addEventListener('change', () => {
+                // Affiche le champ d'adresse et le rend obligatoire dès qu'une option est sélectionnée
+                adresseGroup.style.display = 'block';
+                addressInput.required = true;
             });
         });
     }
@@ -339,14 +336,38 @@ function updateSummary() {
         if (insuranceElement) {
             const insuranceSelect = document.getElementById('insurance');
             let insuranceText = 'Non spécifiée';
-            if (insuranceSelect && insuranceSelect.selectedIndex >= 0) {
-                insuranceText = insuranceSelect.options[insuranceSelect.selectedIndex].text;
+            if (insuranceSelect && data.insurance) {
+                if (data.insurance === 'autre') {
+                    insuranceText = data.otherInsurance || 'Autre (non précisé)';
+                } else {
+                    const selectedOption = insuranceSelect.querySelector(`option[value="${data.insurance}"]`);
+                    insuranceText = selectedOption ? selectedOption.textContent : data.insurance;
+                }
             }
             insuranceElement.innerHTML = `Assurance: ${insuranceText}<br>Police: ${data.policyNumber || 'N/A'}`;
         }
     } catch (e) {
         console.error("Erreur lors de la mise à jour du récapitulatif:", e);
         alert("Une erreur est survenue. Veuillez vérifier les informations saisies.");
+    }
+}
+
+function setupInsuranceField() {
+    const insuranceSelect = document.getElementById('insurance');
+    const otherInsuranceGroup = document.getElementById('other-insurance-group');
+    const otherInsuranceInput = document.getElementById('otherInsurance');
+
+    if (insuranceSelect && otherInsuranceGroup && otherInsuranceInput) {
+        insuranceSelect.addEventListener('change', () => {
+            if (insuranceSelect.value === 'autre') {
+                otherInsuranceGroup.style.display = 'block';
+                otherInsuranceInput.required = true;
+            } else {
+                otherInsuranceGroup.style.display = 'none';
+                otherInsuranceInput.required = false;
+                otherInsuranceInput.value = ''; // Clear the value
+            }
+        });
     }
 }
 

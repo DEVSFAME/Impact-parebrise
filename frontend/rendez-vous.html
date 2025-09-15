@@ -73,7 +73,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="pare-brise" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/pare-brise.png" alt="Pare-brise">
+                                        <img src="icone/pare-brise.png" alt="Pare-brise">
                                         <h4>Remplacement Pare-brise</h4>
                                         <p>Remplacement complet avec garantie</p>
                                     </div>
@@ -81,7 +81,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="reparation" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/Réparation impact.png" alt="Réparation">
+                                        <img src="icone/Réparation impact.png" alt="Réparation">
                                         <h4>Réparation Impact</h4>
                                         <p>Réparation rapide d'impacts et fissures</p>
                                     </div>
@@ -89,7 +89,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="vitre-laterale" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/vitre-latéral.svg" alt="Vitre latérale">
+                                        <img src="icone/vitre-latéral.svg" alt="Vitre latérale">
                                         <h4>Vitres Latérales</h4>
                                         <p>Remplacement vitres avant/arrière</p>
                                     </div>
@@ -97,7 +97,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="lunette" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/Lunette arrière.svg" alt="Lunette">
+                                        <img src="icone/Lunette arrière.svg" alt="Lunette">
                                         <h4>Lunette Arrière</h4>
                                         <p>Remplacement lunette chauffante</p>
                                     </div>
@@ -105,7 +105,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="toit" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/toit-panoramique.svg" alt="Toit">
+                                        <img src="icone/toit-panoramique.svg" alt="Toit">
                                         <h4>Toit Panoramique</h4>
                                         <p>Réparation toit ouvrant</p>
                                     </div>
@@ -113,7 +113,7 @@
                                 <label class="service-option">
                                     <input type="radio" name="service" value="phare" required>
                                     <div class="service-card-form">
-                                        <img src="îcone/phare.svg" alt="Phare">
+                                        <img src="icone/phare.svg" alt="Phare">
                                         <h4>Rénovation Phares</h4>
                                         <p>Polissage et rénovation</p>
                                     </div>
@@ -223,10 +223,10 @@
                                     <label>Lieu d'intervention *</label>
                                     <div>
                                         <label style="margin-right: 20px;">
-                                            <input type="radio" name="lieu_intervention" value="domicile" required> Domicile / Lieu de travail
+                                            <input type="radio" name="lieu_intervention" value="domicile" required> Domicile
                                         </label>
                                         <label>
-                                            <input type="radio" name="lieu_intervention" value="agence"> En agence
+                                            <input type="radio" name="lieu_intervention" value="lieu_travail"> Lieu de travail
                                         </label>
                                     </div>
                                 </div>
@@ -268,17 +268,35 @@
                                     <label for="insurance">Compagnie d'assurance *</label>
                                     <select id="insurance" name="insurance" required>
                                         <option value="">Sélectionnez votre assurance</option>
-                                        <option value="axa">AXA</option>
-                                        <option value="maif">MAIF</option>
-                                        <option value="macif">MACIF</option>
-                                        <option value="groupama">Groupama</option>
-                                        <option value="gan">GAN</option>
-                                        <option value="maaf">MAAF</option>
-                                        <option value="matmut">Matmut</option>
+                                        <option value="abeille-assu">Abeille Assu</option>
                                         <option value="allianz">Allianz</option>
+                                        <option value="assu-2000">Assu 2000</option>
+                                        <option value="assureo">Assureo</option>
+                                        <option value="axa">AXA</option>
+                                        <option value="delta-assurance">Delta Assurance</option>
+                                        <option value="direct-assurance">Direct Assurance</option>
+                                        <option value="euro-assurance">Euro Assurance</option>
+                                        <option value="eurofil">Eurofil</option>
+                                        <option value="gan">GAN</option>
                                         <option value="generali">Generali</option>
+                                        <option value="gmf">GMF</option>
+                                        <option value="groupama">Groupama</option>
+                                        <option value="l-olivier-assurance">L'Olivier Assurance</option>
+                                        <option value="maaf">MAAF</option>
+                                        <option value="macif">MACIF</option>
+                                        <option value="maif">MAIF</option>
+                                        <option value="matmut">Matmut</option>
+                                        <option value="mma">MMA</option>
+                                        <option value="ornikar">Ornikar</option>
+                                        <option value="suravenir">Suravenir</option>
+                                        <option value="swiss-life">Swiss Life</option>
+                                        <option value="thelem">Thelem</option>
                                         <option value="autre">Autre</option>
                                     </select>
+                                </div>
+                                <div class="form-group" id="other-insurance-group" style="display: none;">
+                                    <label for="otherInsurance">Nom de votre assurance *</label>
+                                    <input type="text" id="otherInsurance" name="otherInsurance" placeholder="Précisez le nom de votre assurance">
                                 </div>
                                 <div class="form-group">
                                     <label for="policyNumber">Numéro de police d'assurance</label>
@@ -412,7 +430,7 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p><i class="fas fa-phone"></i> 06 12 59 95 98</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Marseille</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Marseille et tous ces alentours régionaux</p>
                     <p><i class="fas fa-clock"></i> 24h/24 - 7j/7</p>
                 </div>
             </div>
