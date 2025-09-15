@@ -211,8 +211,8 @@ app.post('/api/rendezvous', upload.fields([{ name: 'carteGrise', maxCount: 1 }, 
         }
     }
 
-    // Vérifier l'adresse si lieu_intervention est "domicile"
-    if (newAppointment.lieu_intervention === 'domicile') {
+    // Vérifier l'adresse si lieu_intervention est "domicile" ou "lieu_travail"
+    if (newAppointment.lieu_intervention === 'domicile' || newAppointment.lieu_intervention === 'lieu_travail') {
         if (!newAppointment.address || newAppointment.address.trim() === '') {
             missingFields.push('Adresse d\'intervention');
         }

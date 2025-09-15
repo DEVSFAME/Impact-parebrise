@@ -223,10 +223,10 @@
                                     <label>Lieu d'intervention *</label>
                                     <div>
                                         <label style="margin-right: 20px;">
-                                            <input type="radio" name="lieu_intervention" value="domicile" required> Domicile / Lieu de travail
+                                            <input type="radio" name="lieu_intervention" value="domicile" required> Domicile
                                         </label>
                                         <label>
-                                            <input type="radio" name="lieu_intervention" value="agence"> En agence
+                                            <input type="radio" name="lieu_intervention" value="lieu_travail"> Lieu de travail
                                         </label>
                                     </div>
                                 </div>
@@ -268,17 +268,35 @@
                                     <label for="insurance">Compagnie d'assurance *</label>
                                     <select id="insurance" name="insurance" required>
                                         <option value="">Sélectionnez votre assurance</option>
-                                        <option value="axa">AXA</option>
-                                        <option value="maif">MAIF</option>
-                                        <option value="macif">MACIF</option>
-                                        <option value="groupama">Groupama</option>
-                                        <option value="gan">GAN</option>
-                                        <option value="maaf">MAAF</option>
-                                        <option value="matmut">Matmut</option>
+                                        <option value="abeille-assu">Abeille Assu</option>
                                         <option value="allianz">Allianz</option>
+                                        <option value="assu-2000">Assu 2000</option>
+                                        <option value="assureo">Assureo</option>
+                                        <option value="axa">AXA</option>
+                                        <option value="delta-assurance">Delta Assurance</option>
+                                        <option value="direct-assurance">Direct Assurance</option>
+                                        <option value="euro-assurance">Euro Assurance</option>
+                                        <option value="eurofil">Eurofil</option>
+                                        <option value="gan">GAN</option>
                                         <option value="generali">Generali</option>
+                                        <option value="gmf">GMF</option>
+                                        <option value="groupama">Groupama</option>
+                                        <option value="l-olivier-assurance">L'Olivier Assurance</option>
+                                        <option value="maaf">MAAF</option>
+                                        <option value="macif">MACIF</option>
+                                        <option value="maif">MAIF</option>
+                                        <option value="matmut">Matmut</option>
+                                        <option value="mma">MMA</option>
+                                        <option value="ornikar">Ornikar</option>
+                                        <option value="suravenir">Suravenir</option>
+                                        <option value="swiss-life">Swiss Life</option>
+                                        <option value="thelem">Thelem</option>
                                         <option value="autre">Autre</option>
                                     </select>
+                                </div>
+                                <div class="form-group" id="other-insurance-group" style="display: none;">
+                                    <label for="otherInsurance">Nom de votre assurance *</label>
+                                    <input type="text" id="otherInsurance" name="otherInsurance" placeholder="Précisez le nom de votre assurance">
                                 </div>
                                 <div class="form-group">
                                     <label for="policyNumber">Numéro de police d'assurance</label>
