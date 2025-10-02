@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendez-vous - Impact Pare-Brise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo-impact-parebrise.png" alt="Impact Pare-Brise" class="logo-image">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">À Propos</a></li>
+                <li><a href="rendez-vous.html" class="nav-link cta-button active">RENDEZ-VOUS</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Prendre Rendez-vous</h1>
+            <p>Planifiez votre intervention en quelques clics</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-info">
+                    <h2>Réservez votre créneau</h2>
+                    <p>Choisissez le service dont vous avez besoin, sélectionnez votre date et heure préférées, et remplissez vos informations. Nous vous confirmerons votre rendez-vous rapidement.</p>
+                    
+                    <div class="contact-emergency">
+                        <h3>Rendez-vous urgent ?</h3>
+                        <p>Contactez-nous directement :</p>
+                        <a href="tel:0688487360" class="btn-emergency">
+                            <i class="fas fa-phone"></i>
+                            06 88 48 73 60
+                        </a>
+                    </div>
+
+                    <div class="booking-features">
+                        <div class="booking-feature">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Planification Flexible</h4>
+                                <p>Choisissez parmi nos créneaux disponibles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-container">
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-step active" data-step="1">
+                            <h3><i class="fas fa-tools"></i> Choisissez votre service</h3>
+                            <div class="service-options service-options-grid">
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="pare-brise" required>
+                                    <div class="service-card-form">
+                                        <img src="icone/pare-brise.png" alt="Pare-brise">
+                                        <h4>Remplacement Pare-brise</h4>
+                                        <p>Remplacement complet avec garantie</p>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="reparation" required>
+                                    <div class="service-card-form">
+                                        <img src="icone/Reparation impact.png" alt="Réparation">
+                                        <h4>Réparation Impact</h4>
+                                        <p>Réparation rapide d'impacts et fissures</p>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="vitre-laterale" required>
+                                    <div class="service-card-form">
+                                        <img src="icone/vitre-lateral.svg" alt="Vitre latérale">
+                                        <h4>Vitres Latérales</h4>
+                                        <p>Remplacement vitres avant/arrière</p>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="lunette" required>
+                                    <div class="service-card-form">
+                                        <img src="icone/Lunette arriere.svg" alt="Lunette">
+                                        <h4>Lunette Arrière</h4>
+                                        <p>Remplacement lunette chauffante</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <button type="button" class="btn-next" onclick="nextStep()">
+                                Suivant <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <h3><i class="fas fa-calendar-alt"></i> Choisissez une date et un créneau</h3>
+                            <div class="datetime-selection-container">
+                                <div class="date-selection">
+                                    <label>Date souhaitée :</label>
+                                    <div class="custom-calendar">
+                                        <div class="calendar-header">
+                                            <button type="button" class="calendar-nav" id="prevMonth">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <div class="calendar-month-year" id="currentMonthYear"></div>
+                                            <button type="button" class="calendar-nav" id="nextMonth">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="calendar-weekdays">
+                                            <div class="weekday">Lun</div>
+                                            <div class="weekday">Mar</div>
+                                            <div class="weekday">Mer</div>
+                                            <div class="weekday">Jeu</div>
+                                            <div class="weekday">Ven</div>
+                                            <div class="weekday">Sam</div>
+                                            <div class="weekday">Dim</div>
+                                        </div>
+                                        <div class="calendar-days" id="calendarDays"></div>
+                                    </div>
+                                    <input type="hidden" id="appointment-date" name="date" required>
+                                </div>
+                                <div class="time-selection">
+                                    <label>Créneaux disponibles :</label>
+                                    <div class="time-slots">
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="08:00" required>
+                                            <span>08:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="09:00" required>
+                                            <span>09:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="10:00" required>
+                                            <span>10:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="11:00" required>
+                                            <span>11:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="14:00" required>
+                                            <span>14:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="15:00" required>
+                                            <span>15:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="16:00" required>
+                                            <span>16:00</span>
+                                        </label>
+                                        <label class="time-slot">
+                                            <input type="radio" name="time" value="17:00" required>
+                                            <span>17:00</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Précédent
+                                </button>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <h3><i class="fas fa-user"></i> Vos informations</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName">Prénom *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Nom *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Lieu d'intervention *</label>
+                                    <div>
+                                        <label style="margin-right: 20px;">
+                                            <input type="radio" name="lieu_intervention" value="domicile" required> Domicile
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="lieu_intervention" value="lieu_travail"> Lieu de travail
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group full-width" id="adresse-intervention-group" style="display: none;">
+                                    <label for="address">Adresse d'intervention *</label>
+                                    <input type="text" id="address" name="address" placeholder="Adresse complète">
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Précédent
+                                </button>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="4">
+                            <h3><i class="fas fa-car"></i> Informations véhicule & assurance</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="brand">Marque du véhicule *</label>
+                                    <input type="text" id="brand" name="brand" required placeholder="ex: Renault">
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Modèle *</label>
+                                    <input type="text" id="model" name="model" required placeholder="ex: Clio">
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Année *</label>
+                                    <input type="number" id="year" name="year" required min="1990" max="2024" placeholder="ex: 2020">
+                                </div>
+                                <div class="form-group">
+                                    <label for="license">Immatriculation *</label>
+                                    <input type="text" id="license" name="license" required placeholder="ex: AB-123-CD">
+                                </div>
+                                <div class="form-group">
+                                    <label for="insurance">Compagnie d'assurance *</label>
+                                    <select id="insurance" name="insurance" required>
+                                        <option value="">Sélectionnez votre assurance</option>
+                                        <option value="abeille-assu">Abeille Assu</option>
+                                        <option value="allianz">Allianz</option>
+                                        <option value="assu-2000">Assu 2000</option>
+                                        <option value="assureo">Assureo</option>
+                                        <option value="axa">AXA</option>
+                                        <option value="delta-assurance">Delta Assurance</option>
+                                        <option value="direct-assurance">Direct Assurance</option>
+                                        <option value="euro-assurance">Euro Assurance</option>
+                                        <option value="eurofil">Eurofil</option>
+                                        <option value="gan">GAN</option>
+                                        <option value="generali">Generali</option>
+                                        <option value="gmf">GMF</option>
+                                        <option value="groupama">Groupama</option>
+                                        <option value="l-olivier-assurance">L'Olivier Assurance</option>
+                                        <option value="maaf">MAAF</option>
+                                        <option value="macif">MACIF</option>
+                                        <option value="maif">MAIF</option>
+                                        <option value="matmut">Matmut</option>
+                                        <option value="mma">MMA</option>
+                                        <option value="ornikar">Ornikar</option>
+                                        <option value="suravenir">Suravenir</option>
+                                        <option value="swiss-life">Swiss Life</option>
+                                        <option value="thelem">Thelem</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="other-insurance-group" style="display: none;">
+                                    <label for="otherInsurance">Nom de votre assurance *</label>
+                                    <input type="text" id="otherInsurance" name="otherInsurance" placeholder="Précisez le nom de votre assurance">
+                                </div>
+                                <div class="form-group">
+                                    <label for="policyNumber">Numéro de police d'assurance</label>
+                                    <input type="text" id="policyNumber" name="policyNumber" placeholder="Optionnel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="carteGrise">Copie de la carte grise</label>
+                                    <input type="file" id="carteGrise" name="carteGrise" accept="image/*,.pdf">
+                                </div>
+                                <div class="form-group">
+                                    <label for="impactPhoto">Photo de l'impact (optionnel)</label>
+                                    <input type="file" id="impactPhoto" name="impactPhoto" accept="image/*">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="description">Description du problème</label>
+                                    <textarea id="description" name="description" rows="4" placeholder="Décrivez le problème rencontré (impact, fissure, bris total, etc.)"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Précédent
+                                </button>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    Suivant <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="5">
+                            <h3><i class="fas fa-check-circle"></i> Confirmation</h3>
+                            <div class="booking-summary">
+                                <div class="summary-section">
+                                    <h4>Service sélectionné</h4>
+                                    <p id="summary-service"></p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Date et heure</h4>
+                                    <p id="summary-datetime"></p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Contact</h4>
+                                    <p id="summary-contact"></p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Véhicule</h4>
+                                    <p id="summary-vehicle"></p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Assurance</h4>
+                                    <p id="summary-insurance"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="terms-section">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    J'accepte les <a href="#" target="_blank">conditions générales</a> et la <a href="#" target="_blank">politique de confidentialité</a>
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Je souhaite recevoir les offres promotionnelles par email
+                                </label>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Précédent
+                                </button>
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-calendar-check"></i> Confirmer le rendez-vous
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="progress-step active" data-step="1">
+                                <i class="fas fa-tools"></i>
+                                <span>Service</span>
+                            </div>
+                            <div class="progress-step" data-step="2">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Date</span>
+                            </div>
+                            <div class="progress-step" data-step="3">
+                                <i class="fas fa-user"></i>
+                                <span>Contact</span>
+                            </div>
+                            <div class="progress-step" data-step="4">
+                                <i class="fas fa-car"></i>
+                                <span>Véhicule</span>
+                            </div>
+                            <div class="progress-step" data-step="5">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IMPACT PARE-BRISE</h3>
+                    <p>Expert en remplacement de vitrage automobile.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-snapchat"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Pare-brise</a></li>
+                        <li><a href="#">Vitres latérales</a></li>
+                        <li><a href="#">Lunette arrière</a></li>
+                        <li><a href="#">Réparation impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> 06 88 48 73 60</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Marseille et Bouches-Du-Rhône</p>
+                    <p><i class="fas fa-clock"></i> 24h/48 - 5j/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Impact Pare-Brise. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Blocked Client Modal -->
+    <div id="blocked-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('blocked-modal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-exclamation-triangle modal-icon"></i>
+                <h2>Activité restreinte</h2>
+            </div>
+            <div class="modal-body">
+                <p>Nous sommes désolés, mais en raison d'un non-respect de nos politiques internes, vous ne pouvez pas réserver de nouveau rendez-vous.</p>
+                <p>Veuillez contacter notre personnel pour que votre situation soit examinée et potentiellement débloquée.</p>
+                <p class="contact-info"><i class="fas fa-phone"></i> 06 88 48 73 60</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-close" onclick="closeModal('blocked-modal')">Fermer</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
