@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "yaya2-469723",
+  "private_key_id": "3c1fa450d87b5bce8667e2920c1e4a593e84950b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDncx7tQXvN4jKk\nfHDnANEwGLqVIbU/GJiA+ixd0r4xveMVJwV02kJwdel8gSm/GAvuRpnk3ojhBxSk\n27bjXuORNGEk0gOIiUtksS0xcJw0KH6Ymr85kmIgVR6NO5mrrO5APiDUhyk78kq4\nTiydGsemKCeFawT+HYkfFpP+La/ikLQbhbpKzC0jiNpEDc2vg0mrCsp/xXqwffkT\n3cP3eQEV6C0hKE+2BZfbPNC7RH9kGhmY2NHOJ34MTbHw86UgElnD9GZdDvR5n0+m\nfHvZSscuemrqKps/+tW4MkLdgJjBtkNl3kplvsmsAQRNZ9t0Hj5Nqp/7quPU4PC9\nH3VqgQj/AgMBAAECggEAA52DbtuDGajkkQSVzORXecPBHyg673F5nFyMCd3xwgKN\nBAN4IEAMIdT6emSxtSSLUMPO9PzAfZqOaRht55vpVeQDRAx49dtTKQ9j1qEpx3f+\nD9f6KbLBw27tvorSSfsco5zbOjnV3Ccn1KL5kaCqXEv436qKyVKTyQw7I136U9sj\nYRwIgIruchztGgferWqj3nNMuRwM+IU+wdYGvNUHKL2saQAkjiEbArawDv73WKkt\nDRmvObgzAVQpKoOOD477SvJUBRdPAX5e7tIy8JP//1HYfv2OX3O4Id+qytxyY7jW\nNPEpEspvRup7EscEpTBaOpzs0upzdNPwd7XQwEpTsQKBgQD8LZDOg9RvdEJYTIH0\nM4iiWbUvgp5GzNH569BaeuygRoTpNnPuSKJCgNoYGfX8DShNqcv0Cryrp4tiDRE8\ndlqnal0BFftoDu1+DTArP1qjUDtZ3fEHSY7pvssu4XRxDQ35/54/VNOyHBDiOwyC\nMeaezuOrmQ76ULWwPTl6b2x9UQKBgQDq9SF0xfvriXirMJhZ5nserhgrR2GmVIA9\nTerolYoN/l5NE3QMO/u+OqByPRI1tcquoZGS3YszPW5WuTd3EFZHwv31g9yu5ryd\ngrVhYw/hazOvL19F8Avyk/Kz0waQ2CLdjFHLaN34o/q9JxClZ3qQLKO8LvmlhtIg\ngLpTx8VNTwKBgQCzbCQcm3V5e0l9E6peuo/bm2IrlI7SpwY7AIo05kMX4jTMzZ58\nipdQI+eIwGfhVuc3IrlnQIBuzX2BXPTHhRoJBcd4b1B6ACz/w5hjHOd7TSl9Tkkg\nuziAnOxpxaWYjgZEupe4Tb11ezyUChljROfmVCNuwy8B8IzlARq1PzP8kQKBgQCI\nnUN4vG2ARIyPLVBIZYUND7kp4PVcWyG9g4Kk/d4pyM9YDYmaW35C25/TDMN7y1ow\nM+2K8ZowjvWLI2Kmri8cxroXeTZl0++zvf5sw8bGESkaIXdKGQs5XuDtwjO9II8V\nNrOQjEcUfXQba414PzS6g9ooXz/1CPFAyNiOQkfsbQKBgCqP9PlljFgWO6Tm4UVo\nz7uxb2XR+w6gJx7UNlALNHXRGCQam3ZVuuzJBmdEQFJtR3VXFT95thSiYobupJcm\nQhqx3yqJCKXlFI3jlfsAvLFociS5jtEl2vzHu2rJhedBGsAWX5j54IY4aaVzYdfU\npAF6X5kt1vwnjUcnXhh6y6ZY\n-----END PRIVATE KEY-----\n",
+  "client_email": "impact-parebrise@yaya2-469723.iam.gserviceaccount.com",
+  "client_id": "100929359554008759731",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/impact-parebrise%40yaya2-469723.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

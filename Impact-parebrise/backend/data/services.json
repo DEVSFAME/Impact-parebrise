@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pare-brise",
+    "name": "Remplacement de Pare-brise",
+    "description": "Remplacement complet avec garantie"
+  },
+  {
+    "id": "reparation",
+    "name": "Réparation d'Impact",
+    "description": "Réparation rapide d'impacts et fissures"
+  },
+  {
+    "id": "vitre-laterale",
+    "name": "Vitres Latérales",
+    "description": "Remplacement vitres avant/arrière"
+  },
+  {
+    "id": "lunette",
+    "name": "Lunette Arrière",
+    "description": "Remplacement lunette chauffante"
+  }
+]

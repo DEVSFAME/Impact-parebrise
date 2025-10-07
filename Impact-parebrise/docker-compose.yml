@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build: ./frontend
+    image: impact-parebrise-frontend
+    ports:
+      - "8080:80"
+
+  backend:
+    build: ./backend
+    image: impact-parebrise-backend
+    ports:
+      - "6001:6001"
+    volumes:
+      - backend-uploads:/usr/src/app/uploads
+      - backend-data:/usr/src/app/data
+
+volumes:
+  backend-uploads:
+  backend-data:
